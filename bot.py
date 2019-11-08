@@ -26,7 +26,7 @@ def groupme_callback():
 
 		userName = json_body['name']
 		### BOT CODE GOES HERE! ###
-		if userName == 'Karley Bates':
+		if userName == os.environ['username']:
 			message = random.choice(andrew_responses)
 			reply(message)
 	
