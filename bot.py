@@ -21,9 +21,11 @@ def groupme_callback():
 		# some degree of verification that it is sent via a groupme callback
 		# could also check for "User-Agent: GroupMeBotNotifier/1.0", but that's plenty spoofable
 
-		message = json_body['text']
+		userName = json_body['name']
 		### BOT CODE GOES HERE! ###
-
+		if userName == "Josh Norman":
+			message = "whats up"
+			reply(message)
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000))
