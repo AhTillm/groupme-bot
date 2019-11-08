@@ -17,15 +17,16 @@ def reply(message):
 @app.route('/', methods=['POST'])
 def groupme_callback():
 	json_body = request.get_json()
-	if json_body['group_id'] == os.environ['GROUP_ID'] and json_body['sender_type'] != 'bot':
+	if json_body['sender_type'] != 'bot':
+	#if json_body['group_id'] == os.environ['GROUP_ID'] and json_body['sender_type'] != 'bot':
 		# some degree of verification that it is sent via a groupme callback
 		# could also check for "User-Agent: GroupMeBotNotifier/1.0", but that's plenty spoofable
 
 		userName = json_body['name']
 		### BOT CODE GOES HERE! ###
-		reply("TESTING")
-		if userName == "Josh Norman":
-			message = "whats up"
+		reply('TESTING')
+		if userName == 'Josh Norman':
+			message = 'whats up'
 			reply(message)
 
 if __name__ == "__main__":
