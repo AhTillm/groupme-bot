@@ -18,9 +18,9 @@ def groupme_callback():
 
 		userName = json_body['name']
 		### BOT CODE GOES HERE! ###
-		reply('TESTING')
-		if userName == 'josh norman':
-			message = 'whats up'
+		#reply('TESTING')
+		if userName == 'Karley Bates':
+			message = 'Hi Karley' 
 			reply(message)
 	
 	return "ok", 200
