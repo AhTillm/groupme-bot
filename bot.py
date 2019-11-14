@@ -15,16 +15,17 @@ day = 1
 def groupme_callback():
 	json_body = request.get_json()
 	if json_body['sender_id'] == '821534':
-		if day < 5 :
-			time.sleep(10) 
-			countdownMSN = "There are ______ remaining until christmas" 
-			day = day+1  
-			reply(countdownMSN)
+			message = json_body['text']
+			if( message[:1] == "0"):
+				time.sleep(1) 
+				countdownMSN = "There are ______ remaining until christmas" 
+				day = day+1  
+				reply(countdownMSN)
 	if json_body['sender_type'] != 'bot':
 		message = json_body['text']
 		### BOT CODE GOES HERE! ###
 		if(message == "Start Xmas"):
-			welcomeMSN = "Hello and welcome to your Christmas Countdown"
+			welcomeMSN = "0: Hello and welcome to your Christmas Countdown"
 			time.sleep(5)
 			reply(welcomeMSN)
 	return "ok", 200
