@@ -5,7 +5,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, json, request
 import requests
 
-
+## Add the static responses for the user here 
 andrew_responses = ["Wow Andrew!",
  	"You're doing great Sweetie!", 
 	"Keep up the good work Andrew!", 
