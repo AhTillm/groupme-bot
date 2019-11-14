@@ -21,8 +21,6 @@ app = Flask(__name__)
 def groupme_callback():
 	json_body = request.get_json()
 	if json_body['sender_type'] != 'bot':
-		# some degree of verification that it is sent via a groupme callback
-		# could also check for "User-Agent: GroupMeBotNotifier/1.0", but that's plenty spoofable
 
 		userName = json_body['name']
 		### BOT CODE GOES HERE! ###
