@@ -9,7 +9,33 @@ import time
 
 app = Flask(__name__)
 
-day = 1 
+responses = {
+	"1": "ONE DAY REMAINING QUOTE",
+	"2": "TWO DAYS REMAINING QUOTE",
+	"3": "THREE DAYS REMAINING QUOTE",
+	"4": "FOUR DAYS REMAINING QUOTE",
+	"5": "FIVE DAYS REMAINING QUOTE",
+	"6": "SIX DAYS REMAINING QUOTE", 
+	"7": "SEVEN DAYS REMAINING QUOTE",
+	"8": "EIGHT DAYS REMAINING QUOTE",
+	"9": "NINE DAYS REMAINING QUOTE",
+	"10": "TEN DAYS REMAINING QUOTE",
+	"11": "ELEVEN DAYS REMAINING QUOTE",
+	"12": "TWEVELE DAYS REMAINING QUOTE",
+	"13": "THIRTEEN DAYS REMAINING QUOTE",
+	"14": "FORTEEN DAYS REMAINING QUOTE",
+	"15": "FIFTHTEEN DAYS REMAINING QUOTE",
+	"16": "SIXTEEN DAYS REMAINING QUOTE",
+	"17": "SEVENTEEN DAYS REMAINING QUOTE",
+	"18": "EIGHTTEEN DAYS REMAINING QUOTE",
+	"19": "NINETEEN DAYS REMAINING QUOTE",
+	"20": "TWENTY DAYS REMAINING QUOTE",
+	"21": "TWENTY-ONE DAYS REMAINING QUOTE",
+	"22": "TWENTY-TWO DAYS REMAINING QUOTE",
+	"23": "TWENTY-THREE DAYS REMAINING QUOTE",
+	"24": "TWENTY-FOUR DAYS REMAINING QUOTE",
+	"25": "TWENTY-FIVE DAYS REMAINING QUOTE"
+}
 
 @app.route('/', methods=['POST'])
 def groupme_callback():
@@ -17,13 +43,23 @@ def groupme_callback():
 	if json_body['sender_id'] == '821534':
 			message = json_body['text']
 			if( message[:1] == 'H'):
-				time.sleep(5)
-				reply("We did it" )
+				time.sleep(1)
+				##Start on 25 days away
+				messageReply = "25: "+responses["25"]
+				reply( messageReply)
+			else: 
+				splitMSN = message.split(":", 1)
+				if(int(splitMSN[0])-1 > 0):
+					time.sleep(1)
+					daysLeft = str(int(splitMSN[0])-1)
+					messageReply = daysLeft+": "+responses[daysLeft]
+					reply(messageReply)
+					
 	if json_body['sender_type'] != 'bot':
+		
 		message = json_body['text']
-		### BOT CODE GOES HERE! ###
 		if(message == "Start Xmas"):
-			welcomeMSN = "Hello and welcome to your Christmas Countdown Bot\nEveryday from now until December 25th this GroupMe will recieve an automated message to spark Holiday Cheer!\n\nHappy Holidays and Let the Festivity’s Begin!!"
+			welcomeMSN = "Hello and welcome to your Christmas Countdown Bot 🎄🎁🎄\nEveryday from now until December 25th this GroupMe will recieve an automated message to spark Holiday🎄🎅 Cheer!\n\nHappy Holidays and Let the Festivities Begin!!\nAuthor: Josh Norman jmnorma@clemson.edu"
 			time.sleep(5)
 			reply(welcomeMSN)
 	return "ok", 200
