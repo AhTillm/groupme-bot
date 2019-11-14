@@ -14,6 +14,10 @@ day = 1
 @app.route('/', methods=['POST'])
 def groupme_callback():
 	json_body = request.get_json()
+	if json_body['sender_id'] == '821534':
+			message = json_body['text']
+			time.sleep(5)
+			reply(message)
 	if json_body['sender_type'] != 'bot':
 		message = json_body['text']
 		### BOT CODE GOES HERE! ###
@@ -21,13 +25,6 @@ def groupme_callback():
 			welcomeMSN = "0: Hello and welcome to your Christmas Countdown"
 			time.sleep(5)
 			reply(welcomeMSN)
-	else: 
-		message = json_body['text']
-		if( message[:1] == "0"):
-			time.sleep(1) 
-			countdownMSN = "There are ______ remaining until christmas" 
-			day = day+1  
-			reply(countdownMSN)
 	return "ok", 200
 
 def reply(message):
