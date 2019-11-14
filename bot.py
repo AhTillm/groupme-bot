@@ -16,8 +16,9 @@ def groupme_callback():
 	json_body = request.get_json()
 	if json_body['sender_id'] == '821534':
 			message = json_body['text']
-			time.sleep(5)
-			reply(message)
+			if( message[:1] == '0'):
+				time.sleep(5)
+				reply("We did it" )
 	if json_body['sender_type'] != 'bot':
 		message = json_body['text']
 		### BOT CODE GOES HERE! ###
