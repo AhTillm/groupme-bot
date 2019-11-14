@@ -4,30 +4,32 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from flask import Flask, json, request
 import requests
+import time 
 
-
-andrew_responses = ["Wow Andrew!",
- 	"You're doing great Sweetie!", 
-	"Keep up the good work Andrew!", 
- 	"If I were a person I would love you", 
- 	"Say it louder for the people in the back, Andrew",
-	"Andrew is the best Coordinator",
-	"Outstanding Andrew!", 
-	"Very thoughtful Andrew"]
 
 app = Flask(__name__)
+
+day = 1 
 
 @app.route('/', methods=['POST'])
 def groupme_callback():
 	json_body = request.get_json()
 	if json_body['sender_type'] != 'bot':
 
-		userName = json_body['name']
+		message = json_body['text']
 		### BOT CODE GOES HERE! ###
-		if userName == os.environ['username']:
-			message = random.choice(andrew_responses)
-			reply(message)
+		if(message is "/Start Xmas"):
+			welcomeMSN = "Hello and welcome to your Christmas Countdown"
+			reply(welcomeMSN)
 	
+
+	if json_body['sender_type'] == 'bot':
+		if day < 5:
+			time.sleep(30) 
+			countdownMSN = "There are "+str(5-day)+ " remaining until christmas" 
+			day = day+1  
+			reply(countdownMSN)
+
 	return "ok", 200
 
 def reply(message):
