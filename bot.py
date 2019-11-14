@@ -19,6 +19,7 @@ def groupme_callback():
 		### BOT CODE GOES HERE! ###
 		if(message == "Start Xmas"):
 			welcomeMSN = "Hello and welcome to your Christmas Countdown"
+			time.sleep(5)
 			reply(welcomeMSN)
 	elif json_body['sender_type'] is 'bot':
 		if day  < 5 :
