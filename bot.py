@@ -18,7 +18,7 @@ def groupme_callback():
 
 		message = json_body['text']
 		### BOT CODE GOES HERE! ###
-		if(message is "/Start Xmas"):
+		if(message == "Start Xmas"):
 			welcomeMSN = "Hello and welcome to your Christmas Countdown"
 			reply(welcomeMSN)
 	
