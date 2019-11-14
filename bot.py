@@ -14,6 +14,8 @@ day = 1
 @app.route('/', methods=['POST'])
 def groupme_callback():
 	json_body = request.get_json()
+	if json_body['sender_id'] == '821534':
+		reply("heyy")
 	if json_body['sender_type'] != 'bot':
 		message = json_body['text']
 		### BOT CODE GOES HERE! ###
