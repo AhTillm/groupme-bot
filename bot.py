@@ -16,14 +16,14 @@ def groupme_callback():
 	json_body = request.get_json()
 	if json_body['sender_id'] == '821534':
 			message = json_body['text']
-			if( message[:1] == '0'):
+			if( message[:1] == 'H'):
 				time.sleep(5)
 				reply("We did it" )
 	if json_body['sender_type'] != 'bot':
 		message = json_body['text']
 		### BOT CODE GOES HERE! ###
 		if(message == "Start Xmas"):
-			welcomeMSN = "0: Hello and welcome to your Christmas Countdown"
+			welcomeMSN = "Hello and welcome to your Christmas Countdown Bot\nEveryday from now until December 25th this GroupMe will recieve an automated message to spark Holiday Cheer!\n\nHappy Holidays and Let the Festivity’s Begin!!"
 			time.sleep(5)
 			reply(welcomeMSN)
 	return "ok", 200
