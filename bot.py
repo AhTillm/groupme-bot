@@ -13,7 +13,8 @@ andrew_responses = ["Wow Andrew!",
  	"Say it louder for the people in the back, Andrew",
 	"Andrew is the best Coordinator",
 	"Outstanding Andrew!", 
-	"Very thoughtful Andrew"]
+	"Very thoughtful Andrew",
+	"Everyone be quite the lead coordinator is talking"]
 
 app = Flask(__name__)
 
