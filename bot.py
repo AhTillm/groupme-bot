@@ -64,7 +64,7 @@ def groupme_callback():
 			welcomeMSN = "Hello and welcome to your Christmas Countdown Bot 🎄🎁🎄\nEveryday from now until December 25th this GroupMe will recieve an automated message to spark Holiday🎄🎅 Cheer!\n\nHappy Holidays and Let the Festivities Begin!!\nAuthor: Josh Norman jmnorma@clemson.edu"
 			time.sleep(5)
 			reply(welcomeMSN)
-			
+
 		if( message == "Xmas Bomb"):
 			BombMessage = """🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄\n 
 							🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄\n
@@ -155,7 +155,7 @@ def groupme_callback():
 							🎄🎄🎁🎁🎁🎁🎁🎁🎁🎁🎄🎄🎄🎄🎄\n
 							🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄\n
 							🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄\n"""
-			reply("Does this statement even work ")
+			reply(BombMessage)
 
 	return "ok", 200
 
