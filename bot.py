@@ -10,6 +10,7 @@ import time
 app = Flask(__name__)
 
 #"You're not santa you smell like beef and cheese"
+seconds_per_day = 60*60*24
 responses = {
 	"1": "ONE DAY REMAINING QUOTE",
 	"2": "TWO DAYS REMAINING QUOTE",
@@ -46,7 +47,7 @@ def groupme_callback():
 			if( message[:1] == 'H'):
 				time.sleep(1)
 				##Start on 25 days away
-				messageReply = "25: "+responses["25"]
+				messageReply = "24: "+responses["24"]
 				reply( messageReply)
 			else: 
 				splitMSN = message.split(":", 1)
