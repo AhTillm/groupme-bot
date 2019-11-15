@@ -151,6 +151,7 @@ def groupme_callback():
 							"🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄\n",
 							"🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄\n"]
 			for msn in BombMessage:
+				time.sleep(1)
 				reply(msn)
 
 	return "ok", 200
