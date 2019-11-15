@@ -9,6 +9,7 @@ import time
 
 app = Flask(__name__)
 
+#"You're not santa you smell like beef and cheese"
 responses = {
 	"1": "ONE DAY REMAINING QUOTE",
 	"2": "TWO DAYS REMAINING QUOTE",
